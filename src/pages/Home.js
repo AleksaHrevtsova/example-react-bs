@@ -1,15 +1,14 @@
 import React from "react";
-import Slider from "./components/Slider";
-import Jumbotron from "./components/Jumbotron";
+import Slider from "../components/Slider";
+import Jumbotron from "../components/Jumbotron";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import img1 from "./images/pexels-photo-459301.jpeg";
-import img2 from "./images/pexels-photo-5562777.jpeg";
-import img3 from "./images/pexels-photo-5738449.jpeg";
+import img1 from "../images/1.jpeg";
+import img2 from "../images/2.jpeg";
+import img3 from "../images/3.jpeg";
 
 const Home = () => {
   return (
     <>
-      <h2>Home</h2>
       <Slider />
       <Container style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
         <Row>
@@ -49,7 +48,7 @@ const Home = () => {
       <Container>
         <Row style={{ marginBottom: "30px" }}>
           <Col md={5}>
-            <img src={img1} height={200} />
+            <img src={img1} alt="img" height={200} />
           </Col>
           <Col md={7}>
             <h2>Title</h2>
@@ -71,7 +70,7 @@ const Home = () => {
         </Row>
         <Row style={{ marginBottom: "30px" }}>
           <Col md={5}>
-            <img src={img3} height={200} />
+            <img src={img3} alt="img" height={200} />
           </Col>
           <Col md={7}>
             <h2>Title</h2>

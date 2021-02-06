@@ -1,9 +1,7 @@
 import React from "react";
 import { Jumbotron as Jumbo, Container } from "react-bootstrap";
 import styled from "styled-components";
-import img1 from "../images/pexels-photo-459301.jpeg";
-import img2 from "../images/pexels-photo-5562777.jpeg";
-import img3 from "../images/pexels-photo-5738449.jpeg";
+import img2 from "../images/1.jpeg";
 
 const Styles = styled.div`
   .jumbo {

@@ -4,7 +4,6 @@ import { Container, Table } from "react-bootstrap";
 const Users = () => {
   return (
     <Container>
-      <h2>Users</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
