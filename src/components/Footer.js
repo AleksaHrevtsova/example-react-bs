@@ -11,7 +11,7 @@ const Footer = () => {
           padding: "10px",
         }}
       >
-        <p>&copy; Copyright PARIS-SCHOOL Art & Technologies 2020</p>
+        <p>&copy; Copyright CS technology 2021</p>
       </Container>
     </Container>
   );

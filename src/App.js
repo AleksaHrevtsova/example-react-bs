@@ -5,46 +5,45 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // ====================
 import NaviBar from "./components/NavBar";
-
-// import Users from "./Users";
-// import About from "./About";
-// import Home from "./Home";
-
-// import { Home, About, Users } from "./pages";
-
 import Footer from "./components/Footer";
 
 import routes from "./routes";
 
-function App() {
-  return (
-    <>
-      <Router>
-        <NaviBar />
-        <Suspense fallback="Loading...">
-          <Switch>
-            {/* <Route exact path="/" component={Home} />
-          <Route path="/users" component={Users} />
-          <Route path="/about" component={About} /> */}
+// импортируем компонент контекста
+import AuthContext from "./contexts/Auth";
+import { Component } from "react";
 
-            {/* {routes.map((route) => (
-            <Route
-              key={route.path}
-              exact={route.exact}
-              path={route.path}
-              component={route.component}
-            />
-          ))} */}
+class App extends Component {
+  state = {
+    user: null,
+  };
 
-            {routes.map((route) => (
-              <Route key={route.path} {...route} />
-            ))}
-          </Switch>
-        </Suspense>
-      </Router>
-      <Footer />
-    </>
-  );
+  login = () => {
+    this.setState({ user });
+  };
+  logout = () => {
+    this.setState({ user: null });
+  };
+
+  render() {
+    return (
+      <>
+        <AuthContext>
+          <Router>
+            <NaviBar />
+            <Suspense fallback="Loading...">
+              <Switch>
+                {routes.map((route) => (
+                  <Route key={route.path} {...route} />
+                ))}
+              </Switch>
+            </Suspense>
+          </Router>
+          <Footer />
+        </AuthContext>
+      </>
+    );
+  }
 }
 
 export default App;

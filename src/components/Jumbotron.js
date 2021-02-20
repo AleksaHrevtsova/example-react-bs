@@ -3,6 +3,8 @@ import { Jumbotron as Jumbo, Container } from "react-bootstrap";
 import styled from "styled-components";
 import img2 from "../images/1.jpeg";
 
+import AuthContext from "../contexts/Auth";
+
 const Styles = styled.div`
   .jumbo {
     background: url(${img2}) no-repeat fixed bottom;
@@ -24,24 +26,29 @@ const Styles = styled.div`
   }
 `;
 
-const Jumbotron = () => {
-  return (
-    <Styles>
-      <Jumbo fluid className="jumbo">
-        <div className="overlay"></div>
-        <Container>
-          <h1>Main Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-            perferendis laboriosam aliquam corporis non numquam obcaecati ut
-            tempora blanditiis optio nulla nisi explicabo, deleniti consequuntur
-            ea molestias! Earum est eligendi sed illo quia placeat explicabo,
-            commodi autem laudantium sapiente! Ex provident harum similique
-            accusamus id nam, quam nisi a omnis!
-          </p>
-        </Container>
-      </Jumbo>
-    </Styles>
-  );
-};
+const Jumbotron = () => (
+  <AuthContext.Consumer>
+    {({ name }) => {
+      console.log(name);
+      return (
+        <Styles>
+          <Jumbo fluid className="jumbo">
+            <div className="overlay"></div>
+            <Container>
+              <h1>Title about {name}</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                perferendis laboriosam aliquam corporis non numquam obcaecati ut
+                tempora blanditiis optio nulla nisi explicabo, deleniti
+                consequuntur ea molestias! Earum est eligendi sed illo quia
+                placeat explicabo, commodi autem laudantium sapiente! Ex
+                provident harum similique accusamus id nam, quam nisi a omnis!
+              </p>
+            </Container>
+          </Jumbo>
+        </Styles>
+      );
+    }}
+  </AuthContext.Consumer>
+);
 export default Jumbotron;
