@@ -14,16 +14,6 @@ import AuthContext from "./contexts/Auth";
 import { Component } from "react";
 
 class App extends Component {
-  state = {
-    user: null,
-  };
-
-  login = () => {
-    this.setState({ user });
-  };
-  logout = () => {
-    this.setState({ user: null });
-  };
 
   render() {
     return (

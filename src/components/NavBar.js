@@ -64,7 +64,7 @@ const NaviBar = ({ auth }) => {
                       src={auth.user.avatar}
                       alt={auth.user.name}
                       width="32"
-                      tyle={styles.avatar}
+                      style={styles.avatar}
                     />
                     <span style={styles.name}>Hello, {auth.user.name}</span>
                     <button type="button" onClick={auth.onLogout}>
